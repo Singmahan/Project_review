@@ -57,6 +57,12 @@ $sql= "UPDATE tbl_book SET  p_view=$count WHERE id = $id";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+    color: orange;
+}
+</style>
     <title></title>
     <?php
     include('boostrap.php');
@@ -104,6 +110,29 @@ $sql= "UPDATE tbl_book SET  p_view=$count WHERE id = $id";
         <h4><font color="#0000FF">เนื้อหาสังเขป </font><br>
 		<?php echo $row_showbook['b_briefly']; ?></h4>
         <br>
+      <?php 
+        for($i = 1;$i<=$row_showbook['rating'];$i++){ ?>
+          <span class="fa fa-star checked"></span>
+        <?php } 
+        $dropRating = 5-$row_showbook['rating'];
+        for($i = 1;$i<=$dropRating;$i++){ ?>
+          <span class="fa fa-star"></span>
+        <?php } ?>
+        <h5><font color="#0000FF">คะแนนรีวิว</font>
+    <?php echo $row_showbook['rating']; ?>/5</h2><br>
+
+    <form action="cal_rating.php" method="post">
+    ให้คะแนน
+    <input type="radio" name="rating" value="0">0 
+    <input type="radio" name="rating" value="1">1 
+    <input type="radio" name="rating" value="2">2 
+    <input type="radio" name="rating" value="3">3 
+    <input type="radio" name="rating" value="4">4 
+    <input type="radio" name="rating" value="5">5 
+    <input type="hidden" name="id" value="<?php echo $row_showbook['id']; ?>" >
+    <input type="hidden" name="og_rating" value="<?php echo $row_showbook['rating']; ?>" >
+    <button type="submit" class="btn btn-primary">ให้คะแนน</button>
+    </form>
        <span class="glyphicon glyphicon-eye-open"></span>
 		<span class="badge"><?php echo $row_showbook['p_view']; ?></span> ครั้ง <br>
 
