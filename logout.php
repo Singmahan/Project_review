@@ -2,5 +2,8 @@
     session_start();
     session_destroy();
 
-    header('location: index.php');
-?>
+    echo "<script>";
+    echo "alert('ออกจากระบบสำเร็จ !');";
+    echo "window.location ='index.php'; ";
+    echo "</script>";
+ ?>

@@ -10,13 +10,13 @@
 
     if($result) {
       echo "<script>";
-      echo "alert('แก้ไขประเภทหนังสือเรียบร้อย');";
+      echo "alert('บันทึกข้อมูลประเภทหนังสือเรียบร้อย');";
       echo "window.location ='addtype_book.php'; ";
       echo "</script>";
     } else {
 
       echo "<script>";
-      echo "alert('ไม่สามารถแก้ไขประเภทหนังสือได้ !');";
+      echo "alert('ไม่สามารถบันทึกประเภทหนังสือได้ !');";
       echo "window.location ='addtype_book.php'; ";
       echo "</script>";
     }

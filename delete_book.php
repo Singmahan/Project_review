@@ -25,13 +25,13 @@
     if($result) {
       echo "<script>";
       echo "alert('ลบข้อมูลหนังสือเรียบร้อย');";
-      echo "window.location ='show_book.php'; ";
+      echo "window.location ='show_book_2.php'; ";
       echo "</script>";
     } else {
 
       echo "<script>";
       echo "alert('ไม่สามารถลบข้อมูลหนังสือได้ !');";
-      echo "window.location ='show_book.php'; ";
+      echo "window.location ='show_book_2.php'; ";
       echo "</script>";
     }
     mysqli_close($dbcon);

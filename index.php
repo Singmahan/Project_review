@@ -1,43 +1,67 @@
+<?php
+    session_start();
+    include('connectdb.php');
+    include('session.php');
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>หน้าหลัก</title>
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+    <style type="text/css">
+        input[type=number]{
+          width:40px;
+          text-align:center;
+          color:red;
+          font-weight:600;
+        }
+        .container{
+          font-family: 'Prompt', sans-serif;
+        }
+
+    </style>
   </head>
   <body>
-	<div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-md-14">
-          <?php include('menu.php');?>
+          <?php include('banner.php');?>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <?php include('navbar.php');?>
         </div>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-14">
-          <?php include('show_book_indext.php');?>
+    <div class="container">
+        <div class="row">
+            <?php include('show_index.php');?>
         </div>
-      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php include('footer.php');?>
+        </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-14">
-          <?php include('script.php');?>
-        </div>
-      </div>
-    </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">				</script>
-    <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

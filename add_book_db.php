@@ -9,7 +9,7 @@
     $b_physical = $_POST['b_physical'];
     $b_heading = $_POST['b_heading'];
     $b_isbn = $_POST['b_isbn'];
-    $b_detail = $_POST['b_detail'];
+
     $b_briefly = $_POST['b_briefly'];
     $date = $_POST['date'];
     $type_id = $_POST['type_id'];
@@ -46,20 +46,20 @@
     $b_img2 = $new_image_name2;
     $b_img3 = $new_image_name3;
 
-    $q = "INSERT INTO tbl_book(b_name, b_dcall, b_author, b_print, b_imprint,b_physical,b_heading,b_isbn,b_detail,b_briefly,date,type_id,b_img1,b_img2,b_img3)
-          VALUES ('$b_name', '$b_dcall', '$b_author', '$b_print', '$b_imprint','$b_physical','$b_heading','$b_isbn','$b_detail','$b_briefly','$date','$type_id','$b_img1','$b_img2','$b_img3')";
+    $q = "INSERT INTO tbl_book(b_name, b_dcall, b_author, b_print, b_imprint,b_physical,b_heading,b_isbn,b_briefly,date,type_id,b_img1,b_img2,b_img3)
+          VALUES ('$b_name', '$b_dcall', '$b_author', '$b_print', '$b_imprint','$b_physical','$b_heading','$b_isbn','$b_briefly','$date','$type_id','$b_img1','$b_img2','$b_img3')";
     $result = mysqli_query($dbcon, $q);
 
     if($result) {
 			echo "<script>";
 			echo "alert('เพิ่มข้อมูลหนังสือเรียบร้อย');";
-			echo "window.location ='show_book.php'; ";
+			echo "window.location ='show_book_2.php'; ";
 			echo "</script>";
 		} else {
 
 			echo "<script>";
 			echo "alert('ไม่สามารถเพิ่มข้อมูลหนังสือได้ !');";
-			echo "window.location ='show_book.php'; ";
+			echo "window.location ='show_book_2.php'; ";
 			echo "</script>";
 		}
     mysqli_close($dbcon);
