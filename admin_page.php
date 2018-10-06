@@ -30,6 +30,9 @@
           font-family: 'Prompt', sans-serif;
           font-size: 18px;
         }
+        #TEST{
+          background-color: blue;
+        }
 
     </style>
 
@@ -45,52 +48,34 @@
         </div>
       </div>
     </div>
+
     <div class="container">
-      <div class="col-md-12">
-        <h3 class="text-center">ยินดีต้อนรับ Admin</h3>
-        <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="list-group">
+            <p class="list-group-item active">Admin</p>
+            <a href="show_member.php" class="list-group-item">จัดการข้อมูลสมาชิก</a>
+            <a href="show_comment.php" class="list-group-item">ดูบทวิเคราะห์</a>
+            <a href="show_rating.php" class="list-group-item">จำนวนการเข้าดูหนังสือ / Rating</a>
+            <a href="member_comment.php" class="list-group-item">สถิติสมาชิกที่เข้ามารีวิว</a>
+            <a href="show_problem.php" class="list-group-item">รายงานปัญหาการใช้งานระบบ</a>
+            <a href="show_proplem_block.php" class="list-group-item">รายงานปัญหาระงับการใช้งานระบบ</a>
+            <a href="show_comment_top.php" class="list-group-item">แสดงบทวิเคราะห์ 10 อันดับสูงสุด</a>
+            <a href="rating_top_foradmin.php" class="list-group-item">10 Rating สูงสุด</a>
+          </div>
+        </div>
+        <div class="c0l-sm-12">
+          <h1 class="text-center">ยินดีต้อนรับ Admin</h1>
+        </div>
+        </div>
       </div>
-    </div>
-    <div class="container">
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_member.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_member.php" >จัดการข้อมูลสมาชิก</a>
-          </p>
 
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_comment.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_comment.php" >ดูบทวิเคราะห์</a>
-          </p>
 
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_rating.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_rating.php" >จัดการ Rating</a>
-          </p>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="#"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="#" >สถิติสมาชิกที่เข้ามารีวิว</a>
-          </p>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_problem.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_problem.php" >รายงานปัญหาการใช้งานระบบ</a>
-          </p>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_proplem_block.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_proplem_block.php" >รายงานปัญหาระงับการใช้งานระบบ</a>
-          </p>
-        </div>
-    </div>
+
+
+
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

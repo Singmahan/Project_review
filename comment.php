@@ -56,19 +56,6 @@
         </div>
       </div>
     </div>
-    <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-      <div class="panel panel-info">
-        <div style="padding-top:30px" class="panel-body">
-          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-          <div class="col-sm-12">
-            <label>เพิ่มโดย : </label>
-            <?php echo $s_name; ?><br>
-            <label>ชื่อหนังสือ : </label>
-            <?php echo $row_book['b_name']; ?>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
       <div class="panel panel-info">
@@ -77,19 +64,32 @@
           <form class="form-horizontal" action="comment_db.php" method="post">
             <div class="form-group">
               <div class="col-sm-8">
+                <label>ชื่อหนังสือ : </label>
+                <?php echo $row_book['b_name']; ?>
                 <input type="hidden" name="c_name" value="<?php echo $row_user['name']; ?>">
                 <input type="hidden" name="c_book" value="<?php echo $row_book['b_name']; ?>">
+                <input type="hidden" name="c_id_book" value="<?php echo $row_book['id']; ?>">
                 <textarea name="c_detail" id="c_detail" class="ckeditor" cols="59" rows="8" required></textarea>
+                <div class="form-group text-right">
+                  <label >เพิ่มโดย : </label>
+                  <?php echo $s_name; ?><br>
+                </div>
               </div>
             </div>
+
             <div class="form-group">
               <div class="col-sm-8" align="left">
-                <input type="reset" name="reset" class="btn btn-danger" value="ยกเลิก">
                 <input type="submit" name="submit" class="btn btn-success" value="บันทึกข้อมูล">
+                <input type="reset" name="reset" class="btn btn-danger" value="ยกเลิก">
               </div>
             </div>
           </form>
         </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <?php include('footer.php');?>
       </div>
     </div>
 

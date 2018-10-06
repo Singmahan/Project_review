@@ -21,7 +21,7 @@
     }else {
       echo "<script>";
       echo "alert('ไม่สามารถสมัครสมาชิกได้');";
-      echo "window.location ='login.php'; ";
+      echo "window.location ='register.php'; ";
       echo "</script>";
     }
     mysqli_close($dbcon);

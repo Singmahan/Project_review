@@ -47,43 +47,25 @@
         </div>
       </div>
     </div>
+
     <div class="container">
-      <div class="col-md-12">
-        <h3 class="text-center">ยินดีต้อนรับบรรณารักษ์</h3>
-        <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="col-xs-6 col-sm-3 placeholder">
+            <div class="list-group">
+            <p class="list-group-item active">บรรณารักษ์</p>
+            <a href="show_book_2.php" class="list-group-item">จัดการข้อมูลหนังสือ</a>
+            <a href="show_rating_top.php" class="list-group-item">แสดงจำนวนการเข้าดู และ Rating</a>
+            <a href="show_com_bunna.php" class="list-group-item">ดูบทวิเคราะห์</a>
+            <a href="rating_top.php" class="list-group-item">10 Rating สูงสุด</a>
+          </div>
+        </div>
+        <div class="c0l-sm-12">
+          <h1 class="text-center">ยินดีต้อนรับ บรรณารักษ์</h1>
+        </div>
+        </div>
       </div>
-    </div>
-    <div class="container">
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_book_2.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_book_2.php">จัดการข้อมูลหนังสือ</a>
-          </p>
 
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="show_rating_top.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="show_rating_top.php">รายงาน Rating สูงสุด</a>
-          </p>
-
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="#"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <!-- <a href="show_report.php">Rating สูงสุด</a> -->
-            <a href="#">#</a>
-          </p>
-
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder" align="center">
-          <a href="rating_top.php"><img src="img/test.png" alt="" width="50%" style="padding-bottom:20px" class="img-thumbnail"/></a>
-          <p>
-            <a href="rating_top.php">10 Rating สูงสุด</a>
-          </p>
-
-        </div>
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

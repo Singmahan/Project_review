@@ -2,7 +2,7 @@
     session_start();
     include('connectdb.php');
     include('session.php');
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -30,26 +30,53 @@
         }
 
     </style>
+
   </head>
   <body>
     <div class="container">
       <div class="row">
           <?php include('banner.php');?>
       </div>
+    </div>
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <?php include('navbar.php');?>
         </div>
       </div>
     </div>
+
     <div class="container">
         <div class="row">
-            <?php include('show_index.php');?>
+          <div class="col-md-3">
+            <div class="list-group">
+              <p class="list-group-item active">
+                ประเภทหนังสือ
+              </p>
+              <?php
+              // include('connectdb.php');
+                $sqltype = "SELECT * FROM `tbl_book_type`";
+                $restype = mysqli_query($dbcon, $sqltype);
+                while ($res = mysqli_fetch_array($restype)) {
+                  echo "<a href='index.php?type=".$res['type_id']."' class='list-group-item'>".$res['type_name']."</a>";
+                }
+                ?>
+              <!-- <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+              <a href="#" class="list-group-item">Morbi leo risus</a>
+              <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+              <a href="#" class="list-group-item">Vestibulum at eros</a> -->
+            </div>
+
+          </div>
+          <div class="col-md-9">
+              <?php include('show_index.php');?>
+          </div>
         </div>
     </div>
+
     <div class="container">
         <div class="row">
-            <hr>
+
         </div>
     </div>
     <div class="container">
@@ -57,6 +84,8 @@
             <?php include('footer.php');?>
         </div>
     </div>
+
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

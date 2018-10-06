@@ -1,5 +1,6 @@
 <?php
     include('connectdb.php');
+    date_default_timezone_set('Asia/Bangkok');
 
     $b_name = $_POST['b_name'];
     $b_dcall = $_POST['b_dcall'];
@@ -48,13 +49,56 @@
 
     $q = "INSERT INTO tbl_book(b_name, b_dcall, b_author, b_print, b_imprint,b_physical,b_heading,b_isbn,b_briefly,date,type_id,b_img1,b_img2,b_img3)
           VALUES ('$b_name', '$b_dcall', '$b_author', '$b_print', '$b_imprint','$b_physical','$b_heading','$b_isbn','$b_briefly','$date','$type_id','$b_img1','$b_img2','$b_img3')";
-    $result = mysqli_query($dbcon, $q);
+    $result = $dbcon->query($q);
+    $id_insert = mysqli_insert_id($dbcon);
 
     if($result) {
-			echo "<script>";
-			echo "alert('เพิ่มข้อมูลหนังสือเรียบร้อย');";
-			echo "window.location ='show_book_2.php'; ";
-			echo "</script>";
+
+      // $id_insert = $result->insert_id;
+      // echo $id_insert;
+
+      require_once('class.phpmailer.php');
+
+      $sql = "SELECT * FROM `login_member` WHERE `status` = '0'";
+      $resmail = mysqli_query($dbcon, $sql);
+        while ($a = mysqli_fetch_array($resmail)) {
+
+           $mail = new PHPMailer();
+           $mail->CharSet = "utf-8";
+           $mail->IsHTML(true);
+           $mail->IsSMTP();
+           $mail->SMTPAuth = true; // enable SMTP authentication
+           $mail->SMTPSecure = "tls"; // sets the prefix to the servier
+           $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+           $mail->Port = 587; // set the SMTP port for the GMAIL server
+           $mail->Username = "singmahan1.7@gmail.com"; // GMAIL username
+           $mail->Password = "aabb1155"; // GMAIL password
+           $mail->From = "singmahan1.7@gmail.com";
+           $mail->FromName = "singmahan1.7@gmail.com";  // set from Name
+           $mail->Subject = "มีหนังสือเข้ามาใหม่";
+           $mail->Body = "<h3>มีหนังสือเข้ามาใหม่</h3>";
+           $mail->Body .= "<table border='1'>";
+           $mail->Body .= "<tr>";
+           $mail->Body .= "<th>เรื่อง</th>";
+           $mail->Body .= "<th>รูปภาพ</th>";
+           $mail->Body .= "<th>รายละเอียด</th>";
+           $mail->Body .= "</tr>";
+           $mail->Body .= "<tr>";
+           $mail->Body .= "<td>".$b_name."</td>";
+           $mail->Body .= "<td><img src='http://localhost/Project_review/".$upload_path1."' alt='' width='50'></td>";
+           $mail->Body .= "<td><a href='http://localhost/Project_review/detail_book.php?id=".$id_insert."'>ดูรายละเอียด</a> </td>";
+           $mail->Body .= "</tr>";
+           $mail->Body .= "</table>";
+           echo $mail->Body;
+
+           $mail->AddAddress($a['email'], $a['name']); // to Address
+      		 $mail->Send();
+         }
+
+			// echo "<script>";
+			// echo "alert('เพิ่มข้อมูลหนังสือเรียบร้อย');";
+			// echo "window.location ='show_book_2.php'; ";
+			// echo "</script>";
 		} else {
 
 			echo "<script>";

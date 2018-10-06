@@ -98,7 +98,7 @@
               <div class="col-sm-8">
                 <input type="hidden" name="pb_name" value="<?php echo $row_user['name']; ?>">
                 <input type="hidden" name="pb_email" value="<?php echo $row_user['email']; ?>">
-                <textarea name="pb_detail" id="pb_detail" cols="60" rows="6" required></textarea>
+                <textarea name="pb_detail" id="pb_detail" cols="40" rows="6" required></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -109,6 +109,12 @@
             </div>
           </form>
         </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <?php include('footer.php');?>
       </div>
     </div>
 

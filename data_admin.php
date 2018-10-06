@@ -25,7 +25,10 @@
     <style media="screen">
         .container{
           font-family: 'Prompt', sans-serif;
-          font-size: 18px;
+
+        }
+        #loginbox{
+          font-family: 'Prompt', sans-serif;
         }
     </style>
 
@@ -46,44 +49,45 @@
         <div class="col-md-12">
           <h3 class="text-center">แสดงข้อมูลส่วนตัวผู้ดูแลระบบ</h3>
           <hr>
-          <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
-              <div style="padding-top:30px" class="panel-body">
-                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">ชื่อผู้ใช้ :</label>
-                    <div class="col-sm-8">
-                      <input type="text" name="username" class="form-control" value="<?php echo $s_username; ?>" disabled="disabled" required autofocus autocomplete="off">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">รหัสผ่าน :</label>
-                    <div class="col-sm-8">
-                      <input type="password" name="password" class="form-control" value="<?php echo $s_password; ?>" disabled="disabled" autocomplete="off">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">ชื่อ :</label>
-                    <div class="col-sm-8">
-                      <input type="text" name="username" class="form-control" value="<?php echo $s_name; ?>" disabled="disabled" required autofocus autocomplete="off">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-3 control-label">E-mail :</label>
-                    <div class="col-sm-8">
-                      <input type="text" name="username" class="form-control" value="<?php echo $s_email; ?>" disabled="disabled" required autofocus autocomplete="off">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-8">
-                      <a href="edit_admin.php?id=<?php echo $session_id; ?>" class="btn btn-success">แก้ไขข้อมูลส่วนตัว</a>
-                    </div>
-                  </div>
-                </form>
+
+        </div>
+      </div>
+    </div>
+    <div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info">
+        <div style="padding-top:30px" class="panel-body">
+          <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-3 control-label">ชื่อผู้ใช้ :</label>
+              <div class="col-sm-8">
+                <input type="text" name="username" class="form-control" value="<?php echo $s_username; ?>" disabled="disabled" required autofocus autocomplete="off">
               </div>
             </div>
-          </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">รหัสผ่าน :</label>
+              <div class="col-sm-8">
+                <input type="password" name="password" class="form-control" value="<?php echo $s_password; ?>" disabled="disabled" autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">ชื่อ - สกุล :</label>
+              <div class="col-sm-8">
+                <input type="text" name="username" class="form-control" value="<?php echo $s_name; ?>" disabled="disabled" required autofocus autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">ที่อยู่ E-mail :</label>
+              <div class="col-sm-8">
+                <input type="text" name="username" class="form-control" value="<?php echo $s_email; ?>" disabled="disabled" required autofocus autocomplete="off">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-8">
+                <a href="edit_admin.php?id=<?php echo $session_id; ?>" class="form-control btn btn-success">แก้ไขข้อมูลส่วนตัว</a>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

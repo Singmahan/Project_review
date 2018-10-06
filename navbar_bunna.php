@@ -28,7 +28,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="bunna_page.php"><span class="glyphicon glyphicon-home"></span> หน้าหลัก</a>
-          <a class="navbar-brand" href="bunna_page.php"><span class="glyphicon glyphicon-globe"></span> เกี่ยวกับ</a>
+          <!-- <a class="navbar-brand" href="bunna_page.php"><span class="glyphicon glyphicon-globe"></span> เกี่ยวกับ</a> -->
 
         </div>
 
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>

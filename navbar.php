@@ -33,7 +33,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home"></span> หน้าหลัก</a>
-          <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"></span> ติดต่อ</a>
+          <!-- <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-phone-alt"></span> ติดต่อ</a> -->
 
         </div>
 

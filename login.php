@@ -39,28 +39,36 @@
                 <img src="img/user2.png" alt="" width="20%" style="padding-bottom:20px"/>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Username</label>
+                <label class="col-sm-2 control-label">ชื่อผู้ใช้ :</label>
                   <div class="col-sm-8">
                     <input type="text" name="username" class="form-control" value="" required autofocus autocomplete="off">
                   </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Password</label>
+                <label class="col-sm-2 control-label">รหัสผ่าน :</label>
                   <div class="col-sm-8">
                     <input type="password" name="password" class="form-control" value="" required>
                   </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-8">
-                <input type="submit" name="submit" class=" form-control btn btn-success" value="Login">
+                <input type="submit" name="submit" class=" form-control btn btn-success" value="เข้าสู่ระบบ">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-8">
-                <a href="register.php">สมัครสมาชิก</a>
+                <a href="register.php" class=" form-control btn btn-info">สมัครสมาชิก</a>
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <?php include('footer.php');?>
         </div>
       </div>
     </div>

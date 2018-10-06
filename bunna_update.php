@@ -12,13 +12,13 @@
 
         if($result) {
     			echo "<script>";
-    			echo "alert('แก้ไขข้อมูลเรียบร้อย');";
+    			echo "alert('บันทึกข้อมูลเรียบร้อย');";
     			echo "window.location ='data_bunna.php'; ";
     			echo "</script>";
     		} else {
 
     			echo "<script>";
-    			echo "alert('ไม่สามารถแก้ไขข้อมูลได้ !');";
+    			echo "alert('ไม่สามารถบันทึกข้อมูลได้ !');";
     			echo "window.location ='data_bunna.php'; ";
     			echo "</script>";
     		}

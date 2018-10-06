@@ -18,6 +18,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prompt:300" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    </script>
+
     <style type="text/css">
         input[type=number]{
           width:40px;
@@ -54,74 +64,54 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <a href="add_book.php" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> เพิ่มหนังสือ</a>
-            <a href="addtype_book.php" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> เพิ่มประเภทหนังสือ</a>
-
+            <a href="add_book.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> เพิ่มหนังสือ</a>
+            <a href="addtype_book.php" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> เพิ่มประเภทหนังสือ</a>
             <br><br>
-            <?php
 
-                      include('connectdb.php');
+              <div class="table-responsive">
+                <table id="example" class="display table table-bordered">
+                  <thead>
+                    <tr>
+                      <th class="text-center">ลำดับที่</th>
+                      <th class="text-center">ประเภท</th>
+                      <th class="text-center">ชื่อหนังสือ</th>
+                      <th class="text-center">รหัสหนังสือ</th>
+                      <th class="text-center">ดูเพิ่มเติม</th>
+                      <th class="text-center">จัดการข้อมูลสังเขป</th>
+                      <th class="text-center">แก้ไข</th>
+                      <th class="text-center">ลบ</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
+                    <tr>
+                      <td class="text-center"><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['type_name']; ?></td>
+                      <td><?php echo $row['b_name']; ?></td>
+                      <td><?php echo $row['b_dcall']; ?></td>
+                      <td class="text-center">
+                          <input type="button" name="view" value="view" class="btn btn-primary btn-xs view_data" id="<?php echo $row['id']; ?>">
+                      </td>
+                      <td class="text-center">
+                        <a href="book_briefly.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-xs">จัดการข้อมูลสังเขป</a>
+                      </td>
+                      <td class="text-center">
+                      <a href="edit_book.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span> แก้ไข</a>
+                      </td>
+                      <td class="text-center">
+                      <a href="delete_book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('ต้องการลบข้อมูล จริงหรือ ?');"><span class="glyphicon glyphicon-trash"> ลบ</a>
+                      </td>
+                    </tr>
 
-                      $pro_search = $_POST['pro_search'];
-                      $p = '%'.$pro_search.'%';
-                      $sql = "SELECT * FROM tbl_book INNER JOIN tbl_book_type ON tbl_book.type_id=tbl_book_type.type_id WHERE b_name LIKE '$p'";
-
-                      $result = mysqli_query($dbcon, $sql);
-
-            ?>
-            <div class="container">
-              <div class="col-md-12">
-                <form class="" action="show_book_2.php" method="post">
-                  <div class="form-group">
-                    <label>ค้นหา :</label>
-                    <input type="text" name="pro_search" value="" autofocus autocomplete="off">
-                    <input type="submit" name="submit" value="ค้นหา">
-                  </div>
-                </form>
+                  <?php } ?>
+                  </tbody>
+                </table>
+                <?php include('viewmodal.php'); ?>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <tr>
-            <th class="text-center">ลำดับที่</th>
-            <th class="text-center">ประเภท</th>
-            <th class="text-center">ชื่อหนังสือ</th>
-            <th class="text-center">รหัสหนังสือ</th>
-            <th class="text-center">ดูเพิ่มเติม</th>
-            <th class="text-center">จัดการข้อมูลสังเขป</th>
-            <th class="text-center">แก้ไข</th>
-            <th class="text-center">ลบ</th>
-          </tr>
-          <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
-          <tr>
-            <td class="text-center"><?php echo $row['id']; ?></td>
-            <td><?php echo $row['type_name']; ?></td>
-            <td><?php echo $row['b_name']; ?></td>
-            <td><?php echo $row['b_dcall']; ?></td>
-            <td class="text-center">
-                <input type="button" name="view" value="view" class="btn btn-primary btn-xs view_data" id="<?php echo $row['id']; ?>">
-            </td>
-            <td class="text-center">
-              <a href="book_briefly.php?id=<?php echo $row['id']; ?>" class="btn btn-primary btn-xs">จัดการข้อมูลสังเขป</a>
-            </td>
-            <td class="text-center">
-            <a href="edit_book.php?id=<?php echo $row['id']; ?>" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span> แก้ไข</a>
-            </td>
-            <td class="text-center">
-            <a href="delete_book.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-xs" onclick="return confirm('ต้องการลบข้อมูล จริงหรือ ?');"><span class="glyphicon glyphicon-trash"> ลบ</a>
-            </td>
-          </tr>
-        <?php } ?>
-        </table>
-        <?php include('viewmodal.php'); ?>
-      </div>
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>

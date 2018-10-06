@@ -12,13 +12,13 @@
       if($result) {
   			echo "<script>";
   			echo "alert('แจ้งปัญหาเรียบร้อย');";
-  			echo "window.location ='block_page.php.php'; ";
+  			echo "window.location ='problem_success.php'; ";
   			echo "</script>";
   		} else {
 
   			echo "<script>";
   			echo "alert('ไม่สามารถแจ้งปัญหาได้ !');";
-  			echo "window.location ='block_page.php.php'; ";
+  			echo "window.location ='problem_success.php'; ";
   			echo "</script>";
   		}
       mysqli_close($dbcon);

@@ -57,13 +57,13 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">ชื่อ :</label>
+              <label class="col-sm-3 control-label">ชื่อ - นามสกุล :</label>
               <div class="col-sm-8">
                 <input type="text" name="p_name"  class="form-control" value="" required autocomplete="off">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">E-mail :</label>
+              <label class="col-sm-3 control-label">ที่อยู่ E-mail :</label>
               <div class="col-sm-8">
                 <input type="email" name="p_email" class="form-control" value="" placeholder="example@domain.com" required autocomplete="off">
               </div>
@@ -75,6 +75,13 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <?php include('footer.php');?>
         </div>
       </div>
     </div>

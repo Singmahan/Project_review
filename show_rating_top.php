@@ -19,6 +19,17 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Prompt:300" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    </script>
+
     <style media="screen">
       input[type=number]{
         width:40px;
@@ -61,36 +72,40 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="text-center">รายงานหนังสือที่มีอันดับ Rating สูงสุด</h3>
+          <h3 class="text-center">แสดงจำนวนการเข้าดู และ Rating</h3>
           <hr>
-          <table class="table table-bordered">
-            <tr>
-              <th class="text-center">ลำดับที่</th>
-              <th class="text-center">ประเภท</th>
-              <th class="text-center">ชื่อหนังสือ</th>
-              <th class="text-center">จำนวนการดู</th>
-              <th class="text-center">Rating</th>
-              <th class="text-center">เฉลี่ย</th>
-              <th class="text-center">ดูข้อมูล</th>
-            </tr>
-            <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
-            <tr>
-              <td class="text-center"><?php echo $row['id']; ?></td>
-              <td><?php echo $row['type_name']; ?></td>
-              <td class="text-center"><?php echo $row['b_name']; ?></td>
-              <td class="text-center" id="view"><?php echo $row['p_view']; ?></td>
-              <td class="text-center" id="rating"><?php echo $row['rating']; ?></td>
-              <td class="text-center" id="rating_count"><?php echo $row['rating_count']; ?></td>
-              <td class="text-center"><a href="report_rating.php?id=<?php echo $row['id']; ?>">ดูข้อมูล</a></td>
-            </tr>
-          <?php }?>
+          <table id="example" class="display table table-bordered">
+            <thead>
+              <tr>
+                <th class="text-center">ลำดับที่</th>
+                <th class="text-center">ประเภท</th>
+                <th class="text-center">ชื่อหนังสือ</th>
+                <th class="text-center">จำนวนการดู</th>
+                <th class="text-center">Rating</th>
+                <th class="text-center">เฉลี่ย</th>
+                <!-- <th class="text-center">ดูข้อมูล</th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <?php while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { ?>
+              <tr>
+                <td class="text-center"><?php echo $row['id']; ?></td>
+                <td><?php echo $row['type_name']; ?></td>
+                <td class="text-center"><?php echo $row['b_name']; ?></td>
+                <td class="text-center" id="view"><?php echo $row['p_view']; ?></td>
+                <td class="text-center" id="rating"><?php echo $row['rating']; ?></td>
+                <td class="text-center" id="rating_count"><?php echo $row['rating_count']; ?></td>
+                <!-- <td class="text-center"><a href="report_rating.php?id=">ดูข้อมูล</a></td> -->
+              </tr>
+            <?php }?>
+            </tbody>
           </table>
         </div>
       </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
   </body>

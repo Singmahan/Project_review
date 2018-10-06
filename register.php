@@ -26,6 +26,9 @@
         .container{
           font-family: 'Prompt', sans-serif;
         }
+        #loginbox{
+          font-family: 'Prompt', sans-serif;
+        }
 
     </style>
 
@@ -53,36 +56,44 @@
 
           <form class="form-horizontal" action="register_db.php" method="post">
             <div class="form-group">
-              <label class="col-sm-3 control-label">Username :</label>
+              <label class="col-sm-3 control-label">ชื่อผู้ใช้ :</label>
               <div class="col-sm-8">
                 <input type="text" name="username" class="form-control" value=""  required autofocus autocomplete="off">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Password :</label>
+              <label class="col-sm-3 control-label">รหัสผ่าน :</label>
               <div class="col-sm-8">
                 <input type="password" name="password"  class="form-control" value="" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">Name :</label>
+              <label class="col-sm-3 control-label">ชื่อ - สกุล :</label>
               <div class="col-sm-8">
                 <input type="text" name="name" class="form-control" value="" required autocomplete="off">
               </div>
             </div>
             <div class="form-group">
-              <label class="col-sm-3 control-label">E-mail :</label>
+              <label class="col-sm-3 control-label">ที่อยู่ E-mail :</label>
               <div class="col-sm-8">
                 <input type="email" name="email" class="form-control" value="" placeholder="example@domain.com" required autocomplete="off">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-3 col-sm-8">
-                <input type="reset" name="reset" class="btn btn-danger" value="ยกเลิก">
+
                 <input type="submit" name="submit" class="btn btn-success" value="สมัครสมาชิก">
+                <input type="reset" name="reset" class="btn btn-danger" value="ยกเลิก">
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <?php include('footer.php');?>
         </div>
       </div>
     </div>
